@@ -1,12 +1,8 @@
 "use client";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
-import { red } from "@mui/material/colors";
-
-import { v4 as uuidv4 } from "uuid";
 import Todos from "./components/Todos";
 import { todoContext } from "@/context/TodoContext";
-import Dialog from "./components/ResponsiveDialog";
 export default function App() {
   const [tasks, setTasks] = useState([]);
   const theme = createTheme({
@@ -16,7 +12,7 @@ export default function App() {
       },
       secondary: {
         main: "#ede7f6",
-        app : "#212121"
+        app: "#212121",
       },
     },
   });

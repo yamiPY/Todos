@@ -12,4 +12,6 @@
   height: 100vh;
   direction: rtl !important;
   background-color: #006064;
+  display: flex;
+  
 }

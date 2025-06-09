@@ -4,7 +4,6 @@ import { Card, CardContent, Typography, IconButton } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import "../styles/todo.m.css";
 import { todoContext } from "@/context/TodoContext";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -45,23 +44,22 @@ function Todo({ todo }) {
     setOpenEdit(false);
   };
 
-  function handleInputChange(e){
-    setUpdatedTask({...updatedTask, title : e.target.value})
+  function handleInputChange(e) {
+    setUpdatedTask({ ...updatedTask, title: e.target.value });
   }
 
-  function handleUpdateClick(id){
-    const newUpdatedTask = tasks.map((t)=>{
-      if(todo.id === t.id){
-        return {...t , title : updatedTask.title}
-      }else {
-        return t
+  function handleUpdateClick(id) {
+    const newUpdatedTask = tasks.map((t) => {
+      if (todo.id === t.id) {
+        return { ...t, title: updatedTask.title };
+      } else {
+        return t;
       }
-    })
+    });
 
-    setTasks(newUpdatedTask)
+    setTasks(newUpdatedTask);
     localStorage.setItem("tasks", JSON.stringify(newUpdatedTask));
-    setOpenEdit(false)
-    
+    setOpenEdit(false);
   }
   const [openDelete, setOpenDelete] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
